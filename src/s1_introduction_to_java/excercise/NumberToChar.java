@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class NumberToChar {
     public static void main(String[] args) {
-        int hundreds = 0, tens = 0, ones = 0;
+        int  tens = 0, ones = 0;
         String strHundreds = "", strTens = "", strOnes = "";
         System.out.println("Số cần đọc là: ");
         Scanner sc = new Scanner(System.in);
@@ -134,11 +134,11 @@ public class NumberToChar {
             }
             System.out.printf(strTens + strOnes);
         } else if (number < 1000) {
+           int hundreds = 0;
             hundreds = number / 100;
             tens = (number - (hundreds * 100)) / 10;
             ones = (number - (hundreds * 100)) % 10;
             switch (hundreds) {
-
                 case 1:
                     strHundreds = "One";
                     break;
