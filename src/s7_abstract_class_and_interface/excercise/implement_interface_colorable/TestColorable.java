@@ -11,7 +11,7 @@ public class TestColorable {
             if (square.isColorable()){
                 square.howToColor();
             } else {
-                System.out.println(square.getClass() + " NOT colorable");
+                System.out.println( "NOT colorable");
             }
             System.out.println("");
         }

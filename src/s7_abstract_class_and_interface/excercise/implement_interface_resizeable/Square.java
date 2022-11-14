@@ -1,6 +1,6 @@
 package excercise.implement_interface_resizeable;
 
-public class Square extends Shape {
+public class Square extends Shape implements Resizeable {
     private double side;
 
     public Square(){
