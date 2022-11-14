@@ -1,4 +1,4 @@
-package practice.implement_interface_colorable;
+package excercise.implement_interface_colorable;
 
 public class TestColorable {
     public static void main(String[] args) {

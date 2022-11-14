@@ -1,4 +1,4 @@
-package practice.implement_interface_resizeable;
+package excercise.implement_interface_resizeable;
 
 public class Rectangle extends Shape{
     private double width = 1.0;

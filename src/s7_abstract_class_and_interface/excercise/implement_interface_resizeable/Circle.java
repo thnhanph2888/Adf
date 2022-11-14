@@ -1,4 +1,4 @@
-package practice.implement_interface_resizeable;
+package excercise.implement_interface_resizeable;
 
 
 public class Circle extends Shape {

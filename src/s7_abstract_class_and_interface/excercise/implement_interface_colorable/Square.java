@@ -1,4 +1,4 @@
-package practice.implement_interface_colorable;
+package excercise.implement_interface_colorable;
 
 public class Square implements Colorable {
     private double side;
@@ -28,7 +28,7 @@ public class Square implements Colorable {
         this.colorable = colorable;
     }
 
-    public double getArea(){
+    public double getArea() {
         return this.getSide() * this.getSide();
     }
     @Override

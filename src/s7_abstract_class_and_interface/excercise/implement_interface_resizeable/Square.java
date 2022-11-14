@@ -1,6 +1,4 @@
-package practice.implement_interface_resizeable;
-
-import java.awt.image.SampleModel;
+package excercise.implement_interface_resizeable;
 
 public class Square extends Shape {
     private double side;
