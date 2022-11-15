@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0afb18c7-1d29-4e98-aeaa-a65149f0c1c0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../DemoTest/.idea/DemoTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excercise/TennisGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excercise/TennisGameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s8_clean_code_and_refactoring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s4_lop_va_doi_tuong_trong_java/out/production/s4_lop_va_doi_tuong_trong_java/excercise/fan/MainFan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../s4_lop_va_doi_tuong_trong_java/out/production/s4_lop_va_doi_tuong_trong_java/excercise/fan/MainFan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s4_lop_va_doi_tuong_trong_java/thuat_toan/TimCapSo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../s4_lop_va_doi_tuong_trong_java/thuat_toan/TimCapSo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s5_access_modifier_static_method_static_property/excercise/write_only/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../s5_access_modifier_static_method_static_property/excercise/write_only/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s6_ke_thua/excercise/class_circle_and_class_cylinder/circle/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../s6_ke_thua/excercise/class_circle_and_class_cylinder/circle/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s7_abstract_class_and_interface/excercise/implement_interface_colorable/Colorable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../s7_abstract_class_and_interface/excercise/implement_interface_colorable/Colorable.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HZGM3i0FKGEago7ImwaKToUpZN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0afb18c7-1d29-4e98-aeaa-a65149f0c1c0" name="Changes" comment="" />
+      <created>1668485140457</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668485140457</updated>
+      <workItem from="1668485141639" duration="2779000" />
+      <workItem from="1668493837141" duration="215000" />
+      <workItem from="1668494315719" duration="169000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
