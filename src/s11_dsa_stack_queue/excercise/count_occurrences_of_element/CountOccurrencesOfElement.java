@@ -4,7 +4,7 @@ import java.util.*;
 
 public class CountOccurrencesOfElement {
     public static void main(String[] args) {
-        Map<String, Integer> map = new TreeMap<>();
+        TreeMap<String, Integer> map = new TreeMap<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhap vao mọt chuoi: ");
         String string = sc.nextLine();
