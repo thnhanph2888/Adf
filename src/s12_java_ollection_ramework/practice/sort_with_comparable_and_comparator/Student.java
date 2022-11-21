@@ -1,6 +1,6 @@
-package practice.distinguish_between_hashmap_and_hashset;
+package practice.sort_with_comparable_and_comparator;
 
-public class Student {
+public class Student implements Comparable <Student> {
     private String name;
     private int age;
     private String address;
@@ -41,5 +41,10 @@ public class Student {
     @Override
     public String toString() {
         return "Student@name=" + this.getName() + ",age=" + this.getAge() + ",address=" + this.getAddress();
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        return this.getName().compareTo(student.getName());
     }
 }

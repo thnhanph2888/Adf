@@ -1,8 +1,8 @@
-package excercise.use_arraylist_and_linkedlist_in_java_collection;
+package excercise.use_arraylist_and_linkedlist_in_java_collection.use_linkedlist;
 
 import java.util.Comparator;
 
-public class PriceComparatorDecending implements Comparator<Product> {
+public class PriceComparatorAscending implements Comparator<Product> {
 
     @Override
     public int compare(Product product1, Product product2) {
@@ -14,5 +14,4 @@ public class PriceComparatorDecending implements Comparator<Product> {
             return 0;
         }
     }
-
 }
