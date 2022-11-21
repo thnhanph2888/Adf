@@ -13,6 +13,8 @@ public class ConvertDecimalToBinary {
             stack.push(decimal % 2);
             decimal = decimal / 2;
         }
-        System.out.println(stack);
+        while (!stack.isEmpty()){
+            System.out.print(stack.pop());
+        }
     }
 }
