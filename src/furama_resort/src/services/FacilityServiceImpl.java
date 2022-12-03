@@ -1,2 +1,4 @@
-package src.services;public class FacilityServiceImpl {
+package src.services;
+
+public class FacilityServiceImpl {
 }

@@ -1,2 +1,4 @@
-package src.services;public interface IBookingService {
+package src.services;
+
+public interface IBookingService {
 }

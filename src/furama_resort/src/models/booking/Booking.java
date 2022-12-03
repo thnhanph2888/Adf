@@ -1,2 +1,4 @@
-package src.models;public class Booking {
+package src.models.booking;
+
+public class Booking {
 }

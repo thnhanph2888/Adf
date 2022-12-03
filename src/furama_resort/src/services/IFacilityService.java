@@ -1,2 +1,4 @@
-package src.services;public interface IFacilityService {
+package src.services;
+
+public interface IFacilityService extends IService {
 }
