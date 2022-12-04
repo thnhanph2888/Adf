@@ -8,25 +8,6 @@ import java.util.List;
 public class EmployeeServiceImpl implements IEmployeeService {
     public static ArrayList<Employee> employeeArrayList = new ArrayList<>();
 
-    static {
-        employeeArrayList.add(new Employee("234", "nhan", "1/1", "male", "05", "032543"
-                , "emdd@gmail.com", "university", "fd", 23433));
-        employeeArrayList.add(new Employee("234", "nhan", "1/1", "male", "05", "032543"
-                , "emdd@gmail.com", "university", "fd", 23433));
-        employeeArrayList.add(new Employee("234", "nhan", "1/1", "male", "05", "032543"
-                , "emdd@gmail.com", "university", "fd", 23433));
-        employeeArrayList.add(new Employee("234", "nhan", "1/1", "male", "05", "032543"
-                , "emdd@gmail.com", "university", "fd", 23433));
-    }
-
-
-    public static Employee removeEmployee(int index) {
-        Employee element = employeeArrayList.get(index);
-        employeeArrayList.remove(index);
-        return element;
-    }
-
-
     @Override
     public List<Employee> disPlayEmployee() {
         return employeeArrayList;

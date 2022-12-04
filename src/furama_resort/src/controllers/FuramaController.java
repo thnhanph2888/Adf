@@ -1,6 +1,8 @@
 package src.controllers;
 
+import src.models.person.Customer;
 import src.models.person.Employee;
+import src.services.CustomerServiceImpl;
 import src.services.EmployeeServiceImpl;
 
 import java.util.Scanner;
@@ -8,12 +10,13 @@ import java.util.Scanner;
 public class FuramaController {
 
     EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+    CustomerServiceImpl customerService = new CustomerServiceImpl();
     static Scanner sc = new Scanner(System.in);
     static int choice;
 
     public void disPlayMainMenu() {
         System.out.println(
-                "   1.Employee Management\n" +
+                        "   1.Employee Management\n" +
                         "   2.Customer Management\n" +
                         "   3.Facility Management\n" +
                         "   4.Booking Management\n" +
@@ -58,7 +61,7 @@ public class FuramaController {
                         "2.Add new employee\n" +
                         "3.Delete employee\n" +
                         "4.Edit employee\n" +
-                        "5.Return main menu");
+                        "5.Return main menu\n" + "Enter your choice!");
         choice = Integer.parseInt(sc.nextLine());
         while (choice < 0 || choice > 5) {
             System.out.println("Not have this option, please choose again!");
@@ -84,7 +87,8 @@ public class FuramaController {
     }
 
     public void disPlayListEmployees() {
-        employeeService.disPlayEmployee();
+        System.out.println(employeeService.disPlayEmployee());
+        
     }
     public void addNewEmployees() {
         System.out.println("Enter code: ");
@@ -109,6 +113,7 @@ public class FuramaController {
         int wage = Integer.parseInt(sc.nextLine());
         Employee employee = new Employee(code,name,dayOfBirth,gender,id,phoneNumber,email,level,position,wage);
         employeeService.add(employee);
+        disPlayListEmployees();
     }
 
     public void removeEmployees() {
@@ -171,15 +176,53 @@ public class FuramaController {
     }
 
     public void displayListCustomers() {
-        System.out.println("displayListCustomers()");
+        System.out.println(customerService.disPlayCustomer());
     }
 
     public void addNewCustomer() {
-        System.out.println("addNewCustomer()");
+        System.out.println("Enter code customer: ");
+        String code = sc.nextLine();
+        System.out.println("Enter name customer: ");
+        String name = sc.nextLine();
+        System.out.println("Enter day of birth customer: ");
+        String dayOfBirth = sc.nextLine();
+        System.out.println("Enter gender customer: ");
+        String gender = sc.nextLine();
+        System.out.println("Enter id customer: ");
+        String id = sc.nextLine();
+        System.out.println("Enter phone number customer: ");
+        String phoneNumber = sc.nextLine();
+        System.out.println("Enter email customer: ");
+        String email = sc.nextLine();
+        System.out.println("Enter type customer: ");
+        String type = sc.nextLine();
+        System.out.println("Enter address customer: ");
+        String address = sc.nextLine();
+        customerService.add(new Customer(code,name,dayOfBirth,gender,id,phoneNumber,email,type,address));
     }
 
     public void editCustomer() {
-        System.out.println("editCustomer()");
+        System.out.println("Enter index edit: ");
+        int index = Integer.parseInt(sc.nextLine());
+        System.out.println("Enter new code customer: ");
+        String code = sc.nextLine();
+        System.out.println("Enter new name customer: ");
+        String name = sc.nextLine();
+        System.out.println("Enter new day of birth customer: ");
+        String dayOfBirth = sc.nextLine();
+        System.out.println("Enter new gender customer: ");
+        String gender = sc.nextLine();
+        System.out.println("Enter new id customer: ");
+        String id = sc.nextLine();
+        System.out.println("Enter new phone number customer: ");
+        String phoneNumber = sc.nextLine();
+        System.out.println("Enter new email customer: ");
+        String email = sc.nextLine();
+        System.out.println("Enter new type customer: ");
+        String type = sc.nextLine();
+        System.out.println("Enter new address customer: ");
+        String address = sc.nextLine();
+       customerService.edit(index, code, name, dayOfBirth, gender, id, phoneNumber, email, type, address);
     }
 
     public void facilityManagement() {
