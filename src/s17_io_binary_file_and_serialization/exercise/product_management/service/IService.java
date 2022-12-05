@@ -1,6 +1,6 @@
-package excercise.product_management.service;
+package exercise.product_management.service;
 
-import excercise.product_management.Product;
+import exercise.product_management.model.Product;
 
 import java.util.List;
 
@@ -10,4 +10,5 @@ public interface IService<O> {
 
     List<O> displayProduct(String path);
 
+    String findProduct(int id, String path);
 }

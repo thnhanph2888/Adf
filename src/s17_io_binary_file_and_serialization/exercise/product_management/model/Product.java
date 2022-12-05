@@ -1,6 +1,8 @@
-package exercise.product_management;
+package exercise.product_management.model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int id;
     private String name;
     private String brand;
@@ -60,11 +62,11 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", brand='" + brand + '\'' +
-                ", price=" + price +
-                ", describe='" + describe + '\'' +
+                ",id=" + id +
+                ",name='" + name + '\'' +
+                ",brand='" + brand + '\'' +
+                ",price=" + price +
+                ",describe='" + describe + '\'' +
                 '}';
     }
 }
