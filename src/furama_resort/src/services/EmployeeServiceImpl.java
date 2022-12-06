@@ -8,8 +8,9 @@ import java.util.List;
 public class EmployeeServiceImpl implements IEmployeeService {
     public static ArrayList<Employee> employeeArrayList = new ArrayList<>();
 
+
     @Override
-    public List<Employee> disPlayEmployee() {
+    public List<Employee> getEmployee() {
         return employeeArrayList;
     }
 
@@ -28,4 +29,5 @@ public class EmployeeServiceImpl implements IEmployeeService {
     public void remove(int index) {
         employeeArrayList.remove(index);
     }
+
 }

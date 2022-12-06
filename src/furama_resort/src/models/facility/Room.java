@@ -4,11 +4,11 @@ import src.models.facility.Facility;
 
 public class Room extends Facility {
     private String standard;
-    private String sizeSwimmingPool;
+    private int sizeSwimmingPool;
     private int numberOfFloors;
 
-    public Room(String name, int area, int price, int capacity, String rentalType, String standard, String sizeSwimmingPool, int numberOfFloors) {
-        super(name, area, price, capacity, rentalType);
+    public Room(String code,String name, int area, int price, int capacity, String rentalType, String standard, int sizeSwimmingPool, int numberOfFloors) {
+        super(code ,name, area, price, capacity, rentalType);
         this.standard = standard;
         this.sizeSwimmingPool = sizeSwimmingPool;
         this.numberOfFloors = numberOfFloors;
@@ -22,11 +22,11 @@ public class Room extends Facility {
         this.standard = standard;
     }
 
-    public String getSizeSwimmingPool() {
+    public int getSizeSwimmingPool() {
         return sizeSwimmingPool;
     }
 
-    public void setSizeSwimmingPool(String sizeSwimmingPool) {
+    public void setSizeSwimmingPool(int sizeSwimmingPool) {
         this.sizeSwimmingPool = sizeSwimmingPool;
     }
 

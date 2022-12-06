@@ -2,8 +2,8 @@ package src.services;
 
 import src.models.person.Employee;
 
-public interface IService<E>{
+public interface IService<T>{
 
-      void remove(int index);
+      void add(T t);
 
 }

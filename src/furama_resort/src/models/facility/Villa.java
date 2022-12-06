@@ -5,8 +5,8 @@ import src.models.facility.Facility;
 public class Villa extends Facility {
     private String promotionService;
 
-    public Villa(String name, int area, int price, int capacity, String rentalType, String promotionService) {
-        super(name, area, price, capacity, rentalType);
+    public Villa(String code,String name, int area, int price, int capacity, String rentalType, String promotionService) {
+        super(code, name, area, price, capacity, rentalType);
         this.promotionService = promotionService;
     }
 
@@ -25,4 +25,5 @@ public class Villa extends Facility {
                 "promotionService='" + promotionService + '\'' +
                 '}';
     }
+
 }

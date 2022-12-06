@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CustomerServiceImpl implements ICustomerService{
 
-    List<Customer> customerList = new LinkedList<>();
+    private static List<Customer> customerList = new LinkedList<>();
     @Override
     public void add(Customer customer) {
         customerList.add(customer);
@@ -19,12 +19,8 @@ public class CustomerServiceImpl implements ICustomerService{
     }
 
     @Override
-    public List<Customer> disPlayCustomer() {
+    public List<Customer> getCustomer() {
         return customerList;
     }
 
-    @Override
-    public void remove(int index) {
-
-    }
 }

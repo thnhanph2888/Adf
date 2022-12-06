@@ -1,13 +1,18 @@
 package src.models.facility;
 
+import java.util.Objects;
+
 public abstract class Facility {
+
+     private String code;
      private String name;
      private int area;
      private int price;
      private int capacity;
      private String rentalType;
 
-     public Facility(String name, int area, int price, int capacity, String rentalType) {
+     protected Facility(String code, String name, int area, int price, int capacity, String rentalType) {
+          this.code = code;
           this.name = name;
           this.area = area;
           this.price = price;
@@ -55,12 +60,34 @@ public abstract class Facility {
           this.rentalType = rentalType;
      }
 
+     public String getCode() {
+          return code;
+     }
+
+     public void setCode(String code) {
+          this.code = code;
+     }
+
      @Override
      public String toString() {
-          return  "name='" + name + '\'' +
+          return  "code=" + code +
+                  "name='" + name + '\'' +
                   ", area=" + area +
                   ", price=" + price +
                   ", capacity=" + capacity +
                   ", rentalType='" + rentalType + '\'';
+     }
+
+     @Override
+     public boolean equals(Object o) {
+          if (this == o) return true;
+          if (o == null || getClass() != o.getClass()) return false;
+          Facility facility = (Facility) o;
+          return Objects.equals(code, facility.code);
+     }
+
+     @Override
+     public int hashCode() {
+          return Objects.hash(code);
      }
 }
