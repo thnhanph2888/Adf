@@ -17,13 +17,15 @@ public class Regex {
     public static final String RENTAL_TYPE_REGEX = "[A-Z][a-z]+";
     public static final String BIRTH_DAY_REGEX = "^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$";
 
+    public static final String BIRTH_DAY_REGEX_2 = "^\\d{2}/\\d{2}/\\d{4}$";
+
     public static String enterAndCheckBirthDay() {
         Scanner sc = new Scanner(System.in);
         String birthDay;
         System.out.println("Enter birthDay: ");
         do {
             birthDay = sc.nextLine();
-                if (checkInput(BIRTH_DAY_REGEX, birthDay)) {
+                if (checkInput(BIRTH_DAY_REGEX, birthDay) && checkInput(BIRTH_DAY_REGEX_2, birthDay)) {
                     LocalDate localDate = LocalDate.now();
                     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                     LocalDate dayOfBirth = LocalDate.parse(birthDay, dateTimeFormatter);

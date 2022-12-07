@@ -7,6 +7,7 @@ public class Room extends Facility {
     private int sizeSwimmingPool;
     private int numberOfFloors;
 
+    public Room() {};
     public Room(String code,String name, int area, int price, int capacity, String rentalType, String standard, int sizeSwimmingPool, int numberOfFloors) {
         super(code ,name, area, price, capacity, rentalType);
         this.standard = standard;
@@ -46,5 +47,13 @@ public class Room extends Facility {
                 ", sizeSwimmingPool='" + sizeSwimmingPool + '\'' +
                 ", numberOfFloors=" + numberOfFloors +
                 '}';
+    }
+
+    @Override
+    public String getDataWrite() {
+        return super.getDataWrite() +
+                standard + "," +
+                sizeSwimmingPool + "," +
+                numberOfFloors + "\n";
     }
 }

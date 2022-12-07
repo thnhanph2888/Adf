@@ -6,6 +6,7 @@ public class Employee extends Person{
     private String level;
     private String position;
     private int wage;
+    public Employee() {};
 
     public Employee(String code, String name, String dayOfBirth, String gender, String id, String phoneNumber
             , String email, String level, String position, int wage) {
@@ -46,6 +47,13 @@ public class Employee extends Person{
                 "level='" + level + '\'' +
                 ", position='" + position + '\'' +
                 ", wage=" + wage +
-                '}';
+                "}\n";
+    }
+    @Override
+    public String getDataWrite() {
+        return super.getDataWrite() +
+                level + "," +
+                position + "," +
+                wage ;
     }
 }

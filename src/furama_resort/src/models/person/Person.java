@@ -88,4 +88,13 @@ public abstract class Person {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' ;
     }
+    public String getDataWrite() {
+        return code + "," +
+                name + "," +
+                dayOfBirth + "," +
+                gender + "," +
+                id + "," +
+                phoneNumber + "," +
+                email + ",";
+    }
 }

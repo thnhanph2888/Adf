@@ -6,6 +6,7 @@ public class Customer extends Person {
      private String type;
      private String address;
 
+     public Customer() {};
     public Customer(String code, String name, String dayOfBirth, String gender
             , String id, String phoneNumber, String email, String type, String address) {
         super(code, name, dayOfBirth, gender, id, phoneNumber, email);
@@ -36,5 +37,12 @@ public class Customer extends Person {
                 "type='" + type + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    @Override
+    public String getDataWrite() {
+        return super.getDataWrite() +
+                type + "," +
+                address + "\n";
     }
 }

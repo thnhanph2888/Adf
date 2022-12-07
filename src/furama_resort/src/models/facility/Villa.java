@@ -5,6 +5,8 @@ import src.models.facility.Facility;
 public class Villa extends Facility {
     private String promotionService;
 
+    public Villa(){
+    }
     public Villa(String code,String name, int area, int price, int capacity, String rentalType, String promotionService) {
         super(code, name, area, price, capacity, rentalType);
         this.promotionService = promotionService;
@@ -26,4 +28,9 @@ public class Villa extends Facility {
                 '}';
     }
 
+    @Override
+    public String getDataWrite() {
+        return super.getDataWrite() +
+                promotionService + "\n";
+    }
 }

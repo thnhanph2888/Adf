@@ -3,7 +3,6 @@ package src.models.facility;
 import java.util.Objects;
 
 public abstract class Facility {
-
      private String code;
      private String name;
      private int area;
@@ -11,6 +10,7 @@ public abstract class Facility {
      private int capacity;
      private String rentalType;
 
+     protected Facility() {};
      protected Facility(String code, String name, int area, int price, int capacity, String rentalType) {
           this.code = code;
           this.name = name;
@@ -76,6 +76,15 @@ public abstract class Facility {
                   ", price=" + price +
                   ", capacity=" + capacity +
                   ", rentalType='" + rentalType + '\'';
+     }
+
+     public String getDataWrite () {
+          return code + "," +
+                  name + "," +
+                  area + "," +
+                  price + "," +
+                  capacity + "," +
+                  rentalType + "," ;
      }
 
      @Override

@@ -8,14 +8,15 @@ import src.services.CustomerServiceImpl;
 import src.services.EmployeeServiceImpl;
 import src.services.FacilityServiceImpl;
 import src.utils.Regex;
+
 import java.util.Scanner;
 
 public class FuramaController {
-    EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
-    CustomerServiceImpl customerService = new CustomerServiceImpl();
-    FacilityServiceImpl facilityService = new FacilityServiceImpl();
-    static Scanner sc = new Scanner(System.in);
-    static int choice;
+   private final EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+   private final CustomerServiceImpl customerService = new CustomerServiceImpl();
+   private final FacilityServiceImpl facilityService = new FacilityServiceImpl();
+   private final Scanner sc = new Scanner(System.in);
+   private int choice;
 
     public void displayMainMenu() {
         System.out.println(
@@ -443,6 +444,5 @@ public class FuramaController {
     public static void main(String[] args) {
         FuramaController furamaController = new FuramaController();
         furamaController.displayMainMenu();
-
     }
 }
