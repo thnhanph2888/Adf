@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeServiceImpl implements IEmployeeService {
-    public static ArrayList<Employee> employeeArrayList = new ArrayList<>();
-
+    public static final ArrayList<Employee> employeeArrayList = new ArrayList<>();
 
     @Override
     public List<Employee> getEmployee() {

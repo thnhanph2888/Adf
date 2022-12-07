@@ -1,4 +1,4 @@
-package src.services;
+package src.utils;
 
 public class InputBirthDayException extends Exception{
 

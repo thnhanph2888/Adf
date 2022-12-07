@@ -4,12 +4,10 @@ import src.models.facility.Room;
 import src.models.facility.Villa;
 import src.models.person.Customer;
 import src.models.person.Employee;
-import src.models.person.Person;
 import src.services.CustomerServiceImpl;
 import src.services.EmployeeServiceImpl;
 import src.services.FacilityServiceImpl;
 import src.utils.Regex;
-
 import java.util.Scanner;
 
 public class FuramaController {
@@ -19,18 +17,19 @@ public class FuramaController {
     static Scanner sc = new Scanner(System.in);
     static int choice;
 
-    public void disPlayMainMenu() {
+    public void displayMainMenu() {
         System.out.println(
-                "   1.Employee Management\n" +
+                "------- Main menu -------\n" +
+                        "   1.Employee Management\n" +
                         "   2.Customer Management\n" +
                         "   3.Facility Management\n" +
                         "   4.Booking Management\n" +
                         "   5.Promotion Management\n" +
                         "   6.Exit\n" + "Enter your choice");
-        choose();
+        chooseOption();
     }
 
-    public void choose() {
+    public void chooseOption() {
 
         choice = Integer.parseInt(sc.nextLine());
         while (choice < 1 || 6 < choice) {
@@ -39,35 +38,34 @@ public class FuramaController {
         }
         switch (choice) {
             case 1:
-                employeeManagement();
+                runSystemEmployeeManagement();
                 break;
             case 2:
-                customerManagement();
+                runSystemCustomerManagement();
                 break;
             case 3:
-                facilityManagement();
+                runSystemFacilityManagement();
                 break;
             case 4:
-                bookKingManagement();
+                runSystemBookKingManagement();
                 break;
             case 5:
-                promotionManagement();
+                runSystemPromotionManagement();
                 break;
             case 6:
-                System.out.println("exist");
-                break;
-            default:
+                System.out.println("existed");
                 break;
         }
     }
 
-    public void employeeManagement() {
+    public void runSystemEmployeeManagement() {
         System.out.println(
-                "1.Display list employees\n" +
-                        "2.Add new employee\n" +
-                        "3.Delete employee\n" +
-                        "4.Edit employee\n" +
-                        "5.Return main menu\n" + "Enter your choice!");
+                "------ Employee Management ------\n" +
+                        "   1.Display list employees\n" +
+                        "   2.Add new employee\n" +
+                        "   3.Delete employee\n" +
+                        "   4.Edit employee\n" +
+                        "   5.Return main menu\n" + "Enter your choice!");
         choice = Integer.parseInt(sc.nextLine());
         while (choice < 0 || choice > 5) {
             System.out.println("Not have this option, please choose again!");
@@ -75,7 +73,7 @@ public class FuramaController {
         }
         switch (choice) {
             case 1:
-                disPlayListEmployees();
+                displayListEmployees();
                 break;
             case 2:
                 addNewEmployees();
@@ -87,14 +85,13 @@ public class FuramaController {
                 editEmployees();
                 break;
             case 5:
-                disPlayMainMenu();
+                displayMainMenu();
                 break;
         }
     }
 
-    public void disPlayListEmployees() {
+    public void displayListEmployees() {
         System.out.println(employeeService.getEmployee());
-
     }
 
     public void addNewEmployees() {
@@ -102,13 +99,8 @@ public class FuramaController {
         String code = sc.nextLine();
         System.out.println("Enter name: ");
         String name = sc.nextLine();
-        System.out.println("Enter day of birth: ");
-        String dayOfBirth;
-        do {
-            dayOfBirth = sc.nextLine();
-            System.out.println("Enter gender: ");
-        } while (!Regex.checkInput(Regex.Birth_DAY_REGEX, dayOfBirth));
-
+        String dayOfBirth = Regex.enterAndCheckBirthDay();
+        System.out.println("Enter gender: ");
         String gender = sc.nextLine();
         System.out.println("Enter id: ");
         String id = sc.nextLine();
@@ -121,7 +113,7 @@ public class FuramaController {
         System.out.println("Enter position: ");
         String position = sc.nextLine();
         System.out.println("Enter wage: ");
-        int wage = Integer.parseInt(sc.nextLine());
+        int wage = Regex.enterNumber();
         Employee employee = new Employee(code, name, dayOfBirth, gender, id, phoneNumber, email, level, position, wage);
         employeeService.add(employee);
     }
@@ -158,12 +150,13 @@ public class FuramaController {
         employeeService.edit(indexEdit, code, name, dayOfBirth, gender, id, phoneNumber, email, level, position, wage);
     }
 
-    public void customerManagement() {
+    public void runSystemCustomerManagement() {
         System.out.println(
-                "1.Display list customers\n" +
-                        "2.Add new customer\n" +
-                        "3.Edit customer\n" +
-                        "4.Return main menu");
+                "------ Customer Management ------\n" +
+                        "   1.Display list customers\n" +
+                        "   2.Add new customer\n" +
+                        "   .Edit customer\n" +
+                        "   4.Return main menu");
         choice = Integer.parseInt(sc.nextLine());
         while (choice < 1 || choice > 4) {
             System.out.println("Not have this option, please choose again!");
@@ -180,7 +173,7 @@ public class FuramaController {
                 editCustomer();
                 break;
             case 4:
-                disPlayMainMenu();
+                displayMainMenu();
                 break;
         }
     }
@@ -218,12 +211,7 @@ public class FuramaController {
         String code = sc.nextLine();
         System.out.println("Enter new name customer: ");
         String name = sc.nextLine();
-        String dayOfBirth;
-        do {
-            System.out.println("Enter new day of birth customer: ");
-            dayOfBirth = sc.nextLine();
-        } while (!Regex.checkInput(Regex.Birth_DAY_REGEX, dayOfBirth));
-
+        String dayOfBirth = Regex.enterAndCheckBirthDay();
         System.out.println("Enter new gender customer: ");
         String gender = sc.nextLine();
         System.out.println("Enter new id customer: ");
@@ -239,12 +227,13 @@ public class FuramaController {
         customerService.edit(index, code, name, dayOfBirth, gender, id, phoneNumber, email, type, address);
     }
 
-    public void facilityManagement() {
+    public void runSystemFacilityManagement() {
         System.out.println(
-                "1. Display list facility\n" +
-                        "2. Add new facility\n" +
-                        "3. Display list facility maintenance\n" +
-                        "4. Return main menu");
+                "------ Facility Management ------\n" +
+                        "   1. Display list facility\n" +
+                        "   2. Add new facility\n" +
+                        "   3. Display list facility maintenance\n" +
+                        "   4. Return main menu");
         choice = Integer.parseInt(sc.nextLine());
         while (choice < 0 || choice > 4) {
             System.out.println("Not have this option, please choose again!");
@@ -261,7 +250,7 @@ public class FuramaController {
                 displayListFacilityMaintenance();
                 break;
             case 4:
-                disPlayMainMenu();
+                displayMainMenu();
                 break;
         }
     }
@@ -283,7 +272,7 @@ public class FuramaController {
                 addNewRoom();
                 break;
             case 3:
-                facilityManagement();
+                runSystemFacilityManagement();
                 break;
         }
         displayListFacility();
@@ -292,11 +281,12 @@ public class FuramaController {
     public void addNewVilla() {
         String code;
         String name;
-        int area;
-        int price;
-        int capacity;
+        int area = 0;
+        int price = 0;
+        int capacity = 0;
         String rentalType;
         String promotionService;
+
         do {
             System.out.println("Enter code villa: ");
             code = sc.nextLine();
@@ -309,17 +299,17 @@ public class FuramaController {
 
         do {
             System.out.println("Enter area villa: ");
-            area = Integer.parseInt(sc.nextLine());
+            area = Regex.enterNumber();
         } while (!Regex.checkInput(Regex.AREA_AND_SIZE_SWIMMING_POOL_REGEX, String.valueOf(area)));
 
         do {
             System.out.println("Enter price villa: ");
-            price = Integer.parseInt(sc.nextLine());
+            price = Regex.enterNumber();
         } while (!Regex.checkInput(Regex.PRICE_REGEX, String.valueOf(price)));
 
         do {
             System.out.println("Enter capacity villa: ");
-            capacity = Integer.parseInt(sc.nextLine());
+            capacity = Regex.enterNumber();
         } while (!Regex.checkInput(Regex.CAPACITY_REGEX, String.valueOf(capacity)));
 
         do {
@@ -355,17 +345,17 @@ public class FuramaController {
 
         do {
             System.out.println("Enter area room: ");
-            area = Integer.parseInt(sc.nextLine());
+            area = Regex.enterNumber();
         } while (!Regex.checkInput(Regex.AREA_AND_SIZE_SWIMMING_POOL_REGEX, String.valueOf(area)));
 
         do {
             System.out.println("Enter price room: ");
-            price = Integer.parseInt(sc.nextLine());
+            price = Regex.enterNumber();
         } while (!Regex.checkInput(Regex.PRICE_REGEX, String.valueOf(price)));
 
         do {
             System.out.println("Enter capacity room: ");
-            capacity = Integer.parseInt(sc.nextLine());
+            capacity = Regex.enterNumber();
         } while (!Regex.checkInput(Regex.CAPACITY_REGEX, String.valueOf(capacity)));
 
         do {
@@ -378,12 +368,12 @@ public class FuramaController {
 
         do {
             System.out.println("Enter sizeSwimmingPool: ");
-            sizeSwimmingPool = Integer.parseInt(sc.nextLine());
+            sizeSwimmingPool = Regex.enterNumber();
         } while (!Regex.checkInput(Regex.AREA_AND_SIZE_SWIMMING_POOL_REGEX, String.valueOf(sizeSwimmingPool)));
 
         do {
             System.out.println("Enter numberOfFloors: ");
-            numberOfFloors = Integer.parseInt(sc.nextLine());
+            numberOfFloors = Regex.enterNumber();
         } while (!Regex.checkInput(Regex.NUMBER_OF_FLOOR_REGEX, String.valueOf(numberOfFloors)));
 
         facilityService.addNewRoom(new Room(code, name, area, price, capacity, rentalType, standard, sizeSwimmingPool, numberOfFloors));
@@ -393,9 +383,11 @@ public class FuramaController {
         facilityService.displayFacilityNeedMaintenance();
     }
 
-    public void bookKingManagement() {
-        System.out.println("1.Add new booking\n" +
-                "2.Display list booking\n");
+    public void runSystemBookKingManagement() {
+        System.out.println(
+                "------ Booking Management ------" +
+                        "   1.Add new booking\n" +
+                        "   2.Display list booking\n");
         choice = Integer.parseInt(sc.nextLine());
         while (choice < 1 || choice > 2) {
             System.out.println("Not have this option, please choose again!");
@@ -418,11 +410,12 @@ public class FuramaController {
     public void displayListBooking() {
     }
 
-    public void promotionManagement() {
+    public void runSystemPromotionManagement() {
         System.out.println(
-                "1.Display list customers use service\n" +
-                        "2.Display list customers get voucher\n" +
-                        "3.Return main menu");
+                "------ Promotion Management ------\n" +
+                        "   1. Display list customers use service\n" +
+                        "   2. Display list customers get voucher\n" +
+                        "   3. Return main menu");
         choice = Integer.parseInt(sc.nextLine());
         while (choice < 1 || choice > 3) {
             System.out.println("Not have this option, please choose again!");
@@ -436,7 +429,7 @@ public class FuramaController {
                 disPlayListCustomersGetVoucher();
                 break;
             case 3:
-                disPlayMainMenu();
+                displayMainMenu();
                 break;
         }
     }
@@ -449,7 +442,7 @@ public class FuramaController {
 
     public static void main(String[] args) {
         FuramaController furamaController = new FuramaController();
-        furamaController.disPlayMainMenu();
+        furamaController.displayMainMenu();
 
     }
 }
